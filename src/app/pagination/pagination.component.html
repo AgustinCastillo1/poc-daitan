@@ -1,0 +1,5 @@
+<app-button-search [isPagination]="true" (clicked)="prevPage()" [isDisabled]="page === 1"><span><</span> Prev Page</app-button-search>
+<p>Page: {{page}}</p>
+<app-button-search [isPagination]="true" (clicked)="nextPage()" [isDisabled]="page === pageCount">Next Page ></app-button-search>
+
+  <app-button-search *ngFor="let pageOn of pageCount" [isPagination]="true" (clicked)="searchPage(pageOn)">{{pageOn}}</app-button-search>

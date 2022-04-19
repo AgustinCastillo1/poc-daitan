@@ -1,0 +1,20 @@
+.headercontainer{
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: aquamarine;
+  height: 100px;
+  padding: 10px 10px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.headerimage{
+  height: 80px;
+  width: 80px;
+}
+
+.headertitle{
+  font-family: Roboto;
+  color: black;
+}
