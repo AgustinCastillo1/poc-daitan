@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 })
 export class MoviesServiceService {
 
-  private baseUrl = "http://api.themoviedb.org/3/search/movie";
+  private baseUrl = "https://api.themoviedb.org/3/search/movie";
 
   constructor(private httpClient: HttpClient) { }
 
