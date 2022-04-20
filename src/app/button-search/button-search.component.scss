@@ -1,18 +1,19 @@
 .app-button-search{
   & > .button{
     border-radius: 5px;
-    border-color: black;
-    background-color: lightgray;
+    border-color: aquamarine;
+    background-color: aquamarine;
+    color: white;
   }
 
   &.-pagination{
     & > .button{
       border-radius: 50px;
-      border-color: blue;
     }
 
     & > .button:disabled{
-      background-color: black;
+      opacity: 0.65;
+      cursor: not-allowed;
     }
   }
 }

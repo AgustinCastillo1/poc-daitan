@@ -1,1 +1,12 @@
+.app-card-list{
+
+  & > .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding-left: 30px;
+    flex-wrap: wrap;
+  }
+}
 

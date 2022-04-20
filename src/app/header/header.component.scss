@@ -1,4 +1,4 @@
-.headercontainer{
+.app-header{
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -7,14 +7,14 @@
   padding: 10px 10px;
   display: flex;
   margin-bottom: 20px;
-}
 
-.headerimage{
-  height: 80px;
-  width: 80px;
-}
+  & > .image{
+    height: 80px;
+    width: 80px;
+  }
 
-.headertitle{
-  font-family: Roboto;
-  color: black;
+  & > .title{
+    font-family: Roboto;
+    color: black;
+  }
 }

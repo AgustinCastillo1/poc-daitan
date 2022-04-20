@@ -18,7 +18,7 @@ export class ButtonSearchComponent implements OnInit {
 
   constructor() { }
 
-  onCLick(){
+  onCLick(): void{
     this.clicked.emit();
   }
 

@@ -18,12 +18,11 @@ export class AppComponent {
 
   constructor(private service: MoviesServiceService) { }
 
-  onTyping(queryString){
+  onTyping(queryString: string): void{
     this.search = queryString;
   }
 
-  searchMovies(){
-    this.page = 1;
+  searchMovies(): void{
     this.service.searchMovies(this.search, this.page).subscribe( (res: ResponseAPI) => {
       this.movies = res.results;
       this.pageCount = res.total_pages;
@@ -31,25 +30,22 @@ export class AppComponent {
     });
   }
 
-  nextPage(){
+  nextPage(): void{
     this.page += 1;
-    this.service.searchMovies(this.search, this.page).subscribe( (res: ResponseAPI) => {
-      this.movies = res.results;
-      this.pageCount = res.total_pages;
-      this.moviesCount = res.total_results;
-    });
+    this.searchMovies();
+    this.scrollToTop();
   }
 
-  prevPage(){
+  prevPage(): void{
     this.page -= 1;
-    this.service.searchMovies(this.search, this.page).subscribe( (res: ResponseAPI) => {
-      this.movies = res.results;
-      this.pageCount = res.total_pages;
-      this.moviesCount = res.total_results;
-    });
+    this.searchMovies();
+    this.scrollToTop();
   }
 
-  searchPage(page){
-    console.log(page);
+  scrollToTop(): void{
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
   }
 }

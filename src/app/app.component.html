@@ -6,7 +6,7 @@
   </div>
   <app-card-list [movies]="movies"></app-card-list>
 <div *ngIf="movies.length > 0" class="paginationcontainer">
-  <app-pagination [page]="page" [pageCount]="pageCount" (next)="nextPage()" (prev)="prevPage()" (paginate)="searchPage(page)"></app-pagination>
+  <app-pagination [page]="page" [pageCount]="pageCount" (next)="nextPage()" (prev)="prevPage()" (paginate)="searchPage($event)"></app-pagination>
 </div>
 <div >
 

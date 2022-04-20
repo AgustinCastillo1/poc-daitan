@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter, HostBinding, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, HostBinding, ViewEncapsulation, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-pagination',
@@ -6,7 +6,7 @@ import { Component, Input, OnInit, Output, EventEmitter, HostBinding, ViewEncaps
   styleUrls: ['./pagination.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent implements OnInit, OnChanges {
 
   @HostBinding('class.app-pagination') hostClass = true;
 
@@ -15,22 +15,32 @@ export class PaginationComponent implements OnInit {
   @Output() next = new EventEmitter();
   @Output() prev = new EventEmitter();
   @Output() paginate = new EventEmitter();
+  pagesArray: number[];
 
   constructor() { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes.pageCount){
+      this.buildPaginationArray();
+    }
+  }
 
   ngOnInit(): void {
   }
 
-  nextPage(){
+  buildPaginationArray(){
+    console.log('Called');
+    this.pagesArray = [];
+    for(let i=0;i<this.pageCount;i++){
+      this.pagesArray.push(i+1);
+    }
+  }
+
+  nextPage(): void{
     this.next.emit();
   }
 
-  prevPage(){
+  prevPage(): void{
     this.prev.emit();
   }
-
-  paginateSearch(page){
-    this.paginate.emit(page);
-  }
-
 }

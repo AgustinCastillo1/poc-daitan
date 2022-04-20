@@ -1,8 +1,4 @@
 .app-card{
-
-}
-
-.card{
   box-shadow: 7px 7px 13px 0 rgba(50,50,50,0.22);
   border-radius: 10px;
   width: 300px;
@@ -14,14 +10,16 @@
   background-color: aquamarine;
   display: inline-block;
 
-  &__content{
+  overflow-y: auto;
+  text-overflow: ellipsis;
+
+  & > .content{
     padding: 2px 16px;
   }
 
-}
-
-img{
-  max-width: 100%;
-  max-height: 60%;
-  width: 100%;
+  & > .image{
+    max-width: 100%;
+    max-height: 60%;
+    width: 100%;
+  }
 }

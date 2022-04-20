@@ -1,9 +1,6 @@
-.searchLabel{
-  font-family: Roboto;
-
-}
-
-input{
-  border-radius: 5px;
-  border-color: blue;
+.app-input-search{
+  & > .input{
+    border-radius: 5px;
+    border-color: blue;
+  }
 }
