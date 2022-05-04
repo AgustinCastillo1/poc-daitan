@@ -14,7 +14,6 @@ export class PaginationComponent implements OnInit, OnChanges {
   @Input() pageCount: number;
   @Output() next = new EventEmitter();
   @Output() prev = new EventEmitter();
-  @Output() paginate = new EventEmitter();
   pagesArray: number[];
 
   constructor() { }
@@ -28,7 +27,7 @@ export class PaginationComponent implements OnInit, OnChanges {
   ngOnInit(): void {
   }
 
-  buildPaginationArray(){
+  buildPaginationArray(): void{
     console.log('Called');
     this.pagesArray = [];
     for(let i=0;i<this.pageCount;i++){

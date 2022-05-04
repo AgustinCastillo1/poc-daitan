@@ -1,4 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, HostBinding, ViewEncapsulation } from '@angular/core';
+enum KeyNames{
+  Enter = 'Enter'
+}
 
 @Component({
   selector: 'app-input-search',
@@ -11,6 +14,7 @@ export class InputSearchComponent implements OnInit {
   @HostBinding('class.app-input-search') hostClass = true;
 
   @Output() onTyping = new EventEmitter();
+  @Output() enterSubmitSearch = new EventEmitter();
   search: string;
 
   constructor() { }
@@ -20,6 +24,12 @@ export class InputSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  enterSubmit($ev): void{
+    if($ev.key === KeyNames.Enter){
+      this.enterSubmitSearch.emit();
+    }
   }
 
 }

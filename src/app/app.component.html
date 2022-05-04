@@ -1,12 +1,12 @@
 <app-header [logo]="'daitan.png'" [title]="'TMDB- Movie Search'" [auxiliarLogo]="'encora.png'"></app-header>
-<section>
+<section class="sectionContainer">
   <div>
-    <app-input-search (onTyping)="onTyping($event)"></app-input-search>
+    <app-input-search (onTyping)="onTyping($event)" (enterSubmitSearch)="searchMovies()"></app-input-search>
     <app-button-search (clicked)="searchMovies()">Search</app-button-search>
   </div>
   <app-card-list [movies]="movies"></app-card-list>
-<div *ngIf="movies.length > 0" class="paginationcontainer">
-  <app-pagination [page]="page" [pageCount]="pageCount" (next)="nextPage()" (prev)="prevPage()" (paginate)="searchPage($event)"></app-pagination>
+    <div *ngIf="movies.length" class="paginationcontainer">
+  <app-pagination [page]="page" [pageCount]="pageCount" (next)="nextPage()" (prev)="prevPage()"></app-pagination>
 </div>
 <div >
 
